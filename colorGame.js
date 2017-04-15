@@ -19,13 +19,23 @@ for(var i=0;i<squares.length;i++){
 		var clickedcolor=this.style.background;
 		if(clickedcolor===pickedcolor){
 			console.log("right color")
-			alert("thats right"); }
+			message.textContent="thats right"; }
 		else 
-			{alert("try again");
-		console.log("wrong color")}
+			{this.style.background="grey";}
 	});
 }
 
 var colordisplay=document.getElementById("colordisplay");
 colordisplay.textContent=pickedcolor;
 
+// function randomcolors(){
+// 	arr=[];
+// 	arr.push(random);
+// 	}
+// function random(){
+// 	var r=Math.floor(Math.random()*256);
+// 	var g=Math.floor(Math.random()*256);
+// 	var b=Math.floor(Math.random()*256);
+
+// 	return "rgb("r"," g"," b")"
+// }
