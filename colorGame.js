@@ -6,15 +6,18 @@ var message=document.querySelector("#message");
 var h1=document.querySelector("#headingdiv");
 var reset=document.querySelector("#reset");
 var colordisplay=document.getElementById("colordisplay");
+
+
 reset.addEventListener("click" , function(){
-	var rgb=randomcolors(6);
-	var pickedcolor=pickColor();
+	rgb=randomcolors(6);
+	pickedcolor=pickColor();
 	colordisplay.textContent=pickedcolor;
-	console.log(pickedcolor);
+	
 		for(i=0;i<squares.length;i++){
 			squares[i].style.background=rgb[i];
+			console.log(rgb[i]);
 		}
-	})
+	});
 
 function pickColor() {
 	var random = Math.floor(Math.random() * rgb.length);
@@ -53,7 +56,7 @@ function allsame(){
 }
 function randomcolors(num){
 	arr=[];
-	for(var i=0;i<=num;i++){
+	for(var i=0;i<num;i++){
 	arr.push(random());}
 	return arr;
 	}
