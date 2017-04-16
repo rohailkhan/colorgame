@@ -1,10 +1,4 @@
-var rgb=[
-"rgb(255, 0, 0)",
-	"rgb(255, 255, 0)",
-	"rgb(0, 255, 0)",
-	"rgb(0, 255, 255)",
-	"rgb(0, 0, 255)",
-	"rgb(255, 0, 255)" ]
+var rgb=randomcolors(6);
 
 var squares=document.querySelectorAll("#square");
 var pickedcolor=rgb[0];
@@ -36,14 +30,18 @@ function allsame(){
 
 	}
 }
-// function randomcolors(){
-// 	arr=[];
-// 	arr.push(random);
-// 	}
-// function random(){
-// 	var r=Math.floor(Math.random()*256);
-// 	var g=Math.floor(Math.random()*256);
-// 	var b=Math.floor(Math.random()*256);
-
-// 	return "rgb("r"," g"," b")"
-// }
+function randomcolors(num){
+	arr=[];
+	for(var i=0;i<=num;i++){
+	arr.push(random());}
+	return arr;
+	}
+function random(){
+		//pick a "red" from 0 - 255
+	var r = Math.floor(Math.random() * 256);
+	//pick a "green" from  0 -255
+	var g = Math.floor(Math.random() * 256);
+	//pick a "blue" from  0 -255
+	var b = Math.floor(Math.random() * 256);
+	return "rgb(" + r + ", " + g + ", " + b + ")";
+}
