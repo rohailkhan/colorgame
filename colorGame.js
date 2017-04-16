@@ -1,23 +1,39 @@
 var rgb=randomcolors(6);
 
 var squares=document.querySelectorAll("#square");
-var pickedcolor=rgb[0];
+var pickedcolor=pickColor();
 var message=document.querySelector("#message");
 var h1=document.querySelector("#headingdiv");
+var reset=document.querySelector("reset");
+// reset.addEventListener("click" , function(){
+// 	alert("u clicked");
+// 		// for(i=0;i<squares[i];i++){
+// 		// 	squares[i].style.background=rgb[i];
+// 		// }
+// 	})
+
+function pickColor() {
+	var random = Math.floor(Math.random() * rgb.length-1);
+	return rgb[random];
+}
 for(var i=0;i<squares.length;i++){
 	//add colors to squares
 	squares[i].style.background=rgb[i];
+	// restart();
 	//add event listeners
 	squares[i].addEventListener("click" , function(){
 		//grab color of the click
+
 		var clickedcolor=this.style.background;
+		console.log(clickedcolor);
 		if(clickedcolor===pickedcolor){
 			console.log("right color")
 			message.textContent="thats right"; 
 			allsame();
 			h1.style.background=clickedcolor;}
 		else 
-			{this.style.background="grey"; message.textContent="thats wronggggggg";}
+			{this.style.background="grey"; message.textContent="thats wronggggggg";
+		}
 	});
 }
 
@@ -45,3 +61,16 @@ function random(){
 	var b = Math.floor(Math.random() * 256);
 	return "rgb(" + r + ", " + g + ", " + b + ")";
 }
+// function pickcolor(){
+// 	var random=Math.floor(Math.random()*rgb.length);
+// 	restart rgb[random]
+// }
+//reset function restarts everything
+// function restart(){
+	
+// 	reset.addEventListener("click" , function(){
+// 		for(i=0;i<squares[i];i++){
+// 			squares[i].style.background=rgb[i];
+// 		}
+// 	});
+// }
