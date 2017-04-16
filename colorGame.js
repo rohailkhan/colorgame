@@ -4,16 +4,20 @@ var squares=document.querySelectorAll("#square");
 var pickedcolor=pickColor();
 var message=document.querySelector("#message");
 var h1=document.querySelector("#headingdiv");
-var reset=document.querySelector("reset");
-// reset.addEventListener("click" , function(){
-// 	alert("u clicked");
-// 		// for(i=0;i<squares[i];i++){
-// 		// 	squares[i].style.background=rgb[i];
-// 		// }
-// 	})
+var reset=document.querySelector("#reset");
+var colordisplay=document.getElementById("colordisplay");
+reset.addEventListener("click" , function(){
+	var rgb=randomcolors(6);
+	var pickedcolor=pickColor();
+	colordisplay.textContent=pickedcolor;
+	console.log(pickedcolor);
+		for(i=0;i<squares.length;i++){
+			squares[i].style.background=rgb[i];
+		}
+	})
 
 function pickColor() {
-	var random = Math.floor(Math.random() * rgb.length-1);
+	var random = Math.floor(Math.random() * rgb.length);
 	return rgb[random];
 }
 for(var i=0;i<squares.length;i++){
@@ -37,8 +41,9 @@ for(var i=0;i<squares.length;i++){
 	});
 }
 
-var colordisplay=document.getElementById("colordisplay");
+
 colordisplay.textContent=pickedcolor;
+console.log(pickedcolor);
 
 function allsame(){
 	for (var i=0;i<squares.length;i++){
