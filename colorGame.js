@@ -1,5 +1,6 @@
-var rgb=randomcolors(6);
-// var numSquares = 6;
+
+var numSquares = 6;
+var rgb=randomcolors(numSquares);
 var squares=document.querySelectorAll("#square");
 var pickedcolor=pickColor();
 var message=document.querySelector("#message");
@@ -13,8 +14,8 @@ easy.addEventListener("click" ,function(){
 	
 	hard.classList.remove("selected");
 	easy.classList.add("selected");
-	// numSquares=3;
-	rgb=randomcolors(3);
+	numSquares=3;
+	rgb=randomcolors(numSquares);
 	pickedcolor=pickColor();
 	colordisplay.textContent=pickedcolor;
 	
@@ -42,8 +43,8 @@ hard.addEventListener("click" ,function(){
 	
 	hard.classList.add("selected");
 	easy.classList.remove("selected");
-	// numSquares=6;
-	rgb=randomcolors(6);
+	numSquares=6;
+	rgb=randomcolors(numSquares);
 	pickedcolor=pickColor();
 	colordisplay.textContent=pickedcolor;
 	for(i=0;i<6;i++){
@@ -56,7 +57,7 @@ hard.addEventListener("click" ,function(){
 
 
 reset.addEventListener("click" , function(){
-	rgb=randomcolors(6);
+	rgb=randomcolors(numSquares);
 	pickedcolor=pickColor();
 	colordisplay.textContent=pickedcolor;
 	
