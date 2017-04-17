@@ -1,11 +1,58 @@
 var rgb=randomcolors(6);
-
+// var numSquares = 6;
 var squares=document.querySelectorAll("#square");
 var pickedcolor=pickColor();
 var message=document.querySelector("#message");
 var h1=document.querySelector("#headingdiv");
 var reset=document.querySelector("#reset");
 var colordisplay=document.getElementById("colordisplay");
+var easy=document.getElementById("easy");
+var hard=document.querySelector("#hard");
+
+easy.addEventListener("click" ,function(){
+	
+	hard.classList.remove("selected");
+	easy.classList.add("selected");
+	// numSquares=3;
+	rgb=randomcolors(3);
+	pickedcolor=pickColor();
+	colordisplay.textContent=pickedcolor;
+	
+	for(i=0;i<squares.length;i++){
+		if(rgb[i]){
+			squares[i].style.background=rgb[i];
+		}
+		else
+		{
+			squares[i].style.background="none";
+		}
+	}
+	// my way of doing this
+	//rgb=randomcolors(6);
+	// for(i=0;i<=3;i++){
+	// 	squares[i].style.background=rgb[i];
+
+
+	// }
+	// 	squares[3].style.background="none";
+	// 	squares[4].style.background="none";
+	// 	squares[5].style.background="none";
+});
+hard.addEventListener("click" ,function(){
+	
+	hard.classList.add("selected");
+	easy.classList.remove("selected");
+	// numSquares=6;
+	rgb=randomcolors(6);
+	pickedcolor=pickColor();
+	colordisplay.textContent=pickedcolor;
+	for(i=0;i<6;i++){
+		squares[i].style.background=rgb[i];
+	}
+		
+	
+	
+});
 
 
 reset.addEventListener("click" , function(){
@@ -17,6 +64,7 @@ reset.addEventListener("click" , function(){
 			squares[i].style.background=rgb[i];
 			console.log(rgb[i]);
 		}
+		h1.style.background="grey";
 	});
 
 function pickColor() {

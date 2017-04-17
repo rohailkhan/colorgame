@@ -13,8 +13,11 @@ body{
 	margin: 0 auto;
 	max-width: 600px;
 }
-#reset{
+#stripe{
 	background-color: white;
 	height: 30px;
 	text-align: center;
+}
+.selected{
+	background-color: yellow;
 }
